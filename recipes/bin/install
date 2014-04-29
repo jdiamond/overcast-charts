@@ -7,13 +7,13 @@
 
 # set -x
 
-appPath="/home/appuser/overcast-charts"
+appPath="`echo $HOME`/overcast-charts"
 logPath="$appPath/logs"
 
-echo "Setting all keys to /home/appuser/.overcast/keys/overcast.key..."
+echo "Setting all keys to $HOME/.overcast/keys/overcast.key..."
 echo "If any of your instances use a different key, you'll need to fix that manually."
 
-sed -i "s/\"ssh_key\": \".*\"/\"ssh_key\": \"\/home\/appuser\/.overcast\/keys\/overcast.key\"/g" $HOME/.overcast/clusters.json
+sed -i "s/\"ssh_key\": \".*\"/\"ssh_key\": \"${HOME//\//\/}\/.overcast\/keys\/overcast.key\"/g" $HOME/.overcast/clusters.json
 
 echo "Resetting $HOME/.overcast/variables.json..."
 

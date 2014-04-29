@@ -7,7 +7,7 @@
 
 # set -x
 
-appPath="/home/appuser/overcast-charts"
+appPath="`echo $HOME`/overcast-charts"
 logPath="$appPath/logs"
 appBinary="$appPath/app/server/app.js"
 
